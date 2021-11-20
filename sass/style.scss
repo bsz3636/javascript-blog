@@ -2,8 +2,11 @@
 
 /* Variables */
 
-$color-light: #fff;
+$color-light: rgb(236, 238, 238);
 $color-dark: #444;
+$color-back: #dfe6e9;
+$color-decorate: #1B1464;
+
 
 $font-logo: 'Sacramento', cursive;
 $font-header: 'Oswald', sans-serif;
@@ -16,7 +19,7 @@ $font-text: 'Source Sans Pro', sans-serif;
 }
 
 body {
-  background: $color-light;
+  background: $color-back;
   font-family: $font-text;
   color: $color-dark;
   font-weight: 300;
@@ -54,6 +57,8 @@ body {
 
 .posts {
   flex: 2 0 0;
+  position:relative;
+  overflow: auto;
 }
 
 .sidebar, .posts {
@@ -68,6 +73,7 @@ body {
 
 .logo {
   font-family: $font-logo;
+  color: $color-decorate;
   font-weight: 400;
   font-size: 104px;
   line-height: 1;
@@ -102,10 +108,18 @@ body {
 /* Post */
 
 .post {
-  display: none;
-  &.active {
     display: block;
-  }
+    opacity: 0;
+    transition: opacity 1s linear left;
+    position: absolute;
+    z-index: 1;
+    &.active {
+      display: block;
+      opacity: 1;
+      transition: opacity 1s linear left;
+      padding: 0 15px;
+      z-index: 2;
+    }
 }
 
 .post-author {
@@ -117,4 +131,8 @@ body {
   p {
     margin: 0 10px 0 0;
   }
+}
+.tone {
+  color: $color-decorate;
+
 }

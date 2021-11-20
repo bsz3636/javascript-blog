@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #fff;
+  background: #dfe6e9;
   font-family: "Source Sans Pro", sans-serif;
   color: #444;
   font-weight: 300;
@@ -51,10 +51,12 @@ body {
   -webkit-box-flex: 2;
       -ms-flex: 2 0 0px;
           flex: 2 0 0;
+  position: relative;
+  overflow: auto;
 }
 
 .sidebar, .posts {
-  background: #fff;
+  background: #eceeee;
   margin-right: 10px;
   padding: 40px;
   border: 1px solid #444;
@@ -64,6 +66,7 @@ body {
 /* Logo */
 .logo {
   font-family: "Sacramento", cursive;
+  color: #1B1464;
   font-weight: 400;
   font-size: 104px;
   line-height: 1;
@@ -92,11 +95,21 @@ body {
 
 /* Post */
 .post {
-  display: none;
+  display: block;
+  opacity: 0;
+  -webkit-transition: opacity 1s linear left;
+  transition: opacity 1s linear left;
+  position: absolute;
+  z-index: 1;
 }
 
 .post.active {
   display: block;
+  opacity: 1;
+  -webkit-transition: opacity 1s linear left;
+  transition: opacity 1s linear left;
+  padding: 0 15px;
+  z-index: 2;
 }
 
 .post-author {
@@ -111,5 +124,9 @@ body {
 
 .post-tags p {
   margin: 0 10px 0 0;
+}
+
+.tone {
+  color: #1B1464;
 }
 /*# sourceMappingURL=style.css.map */
