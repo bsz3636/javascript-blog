@@ -39,7 +39,7 @@
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list',
-    optArticleAuthorSelector = 'article .post-autor';
+    optArticleAuthorSelector = '.post-author';
 
   const generateTitleLinks = function (customSelector = '') {
     /* remove contents of titleList */
@@ -119,7 +119,7 @@
 
         /* generate HTML of the link */
         let linkHTML =
-          '<li><a href="#tag-' + tag + ' "><span>' + tag + ' '+ '</span></a></li>';
+          '<li><a href="#tag-' + tag + '"><span>' + tag + ' '+ '</span></a></li>';
         /*console.log('linkHTML: ', linkHTML);*/
 
         /* add generated code to html variable */
@@ -185,7 +185,7 @@
   const addClickListenersToTags = function () {
 
     /* find all links to tags */
-    const tagLinks = document.querySelectorAll('optArticleTagsSelector');
+    const tagLinks = document.querySelectorAll('.post-tags a');
     /*console.log('tagLinks: ',tagLinks);*/
 
     /* START LOOP: for each link */
@@ -209,7 +209,7 @@
       /*console.log('article: ',article);*/
 
       /* find author wrapper */
-      const authorWrapper = article.querySelectorAll(optArticleAuthorSelector);
+      const authorWrapper = article.querySelector(optArticleAuthorSelector);
       console.log(authorWrapper);
 
       /* make html variable with empty string */
@@ -220,7 +220,7 @@
       console.log('author: ', author);
 
       /* generate HTML of the link */
-      let linkHTML = '<a href="#author-' + author + ' "><span>' + author + '</span></a>';
+      let linkHTML = '<a href="#author-' + author + '"><span>' + author + '</span></a>';
       console.log('linkHTML: ',linkHTML);
 
       /* add generated code to html variable */
@@ -284,7 +284,7 @@
   const addClickListenersToAuthors = function () {
 
     /* find all links to authors */
-    const authorLinks = document.querySelectorAll(optArticleAuthorSelector);
+    const authorLinks = document.querySelectorAll('a[href^="#author-"]');
 
     /* START LOOP: for each link */
     for (let authorLink of authorLinks) {
