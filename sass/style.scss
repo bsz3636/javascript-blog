@@ -140,5 +140,38 @@ body {
 
 .tone {
   color: $color-decorate;
+}
+.sidebar .titles a {
+  text-decoration: none;
+}
+.sidebar .tags li {
+  display: inline;
+  padding-right: 7px;
+}
+.sidebar .tags a {
+  text-decoration: none;
+  color: $color-decorate;
+}
 
+.tag-size-6 {
+  font-size: 150%;
+}
+.tag-size-5 {
+  font-size: 135%;
+}
+.tag-size-4 {
+  font-size: 120%;
+}
+.tag-size-3 {
+  font-size: 105%;
+}
+.tag-size-2 {
+  font-size: 90%;
+}
+.tag-size-1 {
+  font-size: 80%;
+}
+.sidebar .authors a {
+  text-decoration: none;
+  color: $color-decorate;
 }
